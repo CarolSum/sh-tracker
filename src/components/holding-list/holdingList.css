@@ -1,0 +1,11 @@
+.holding-list-container h1 {
+  margin: auto 0;
+}
+
+.holding-list-container .profit {
+  color: #f00;
+}
+
+.holding-list-container .loss {
+  color: green;
+}
