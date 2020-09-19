@@ -519,9 +519,9 @@ export class Holdings extends React.Component<IHoldingsProps, IHoldingsState> {
     this.getHoldingsData();
   }
 
-  private getHoldingsData() {
+  getHoldingsData = (pageSize?: number) => {
     axios.get('http://localhost:3002/getHoldingsData', {
-      params: getHoldingsDataParam(),
+      params: getHoldingsDataParam(pageSize),
     }).then(res => {
       const result = JSON.parse(res.data.holdings) || {};
       this.setState({
@@ -552,6 +552,7 @@ export class Holdings extends React.Component<IHoldingsProps, IHoldingsState> {
         <HoldingList
           onClickStock={this.setSelectedStock}
           dataSource={this.state.holdingsData}
+          getHoldingsData={this.getHoldingsData}
         >
         </HoldingList>
         <Modal

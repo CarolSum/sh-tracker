@@ -1,14 +1,14 @@
 import { jsObj, GET_STOCK_DATA } from '../utils/constant';
 import axios from 'axios'
 
-export function getHoldingsDataParam() {
+export function getHoldingsDataParam(pageSize?: number) {
   const rt = parseInt((new Date().getTime() / 30000).toString());
   return {
     sty: 'analy',
     SortType: 'NDATE',
     SortRule: '-1',
     PageIndex: 1,
-    PageSize: 120,
+    PageSize: pageSize ? pageSize : 200,
     jsObj,
     type: 'NSHDDETAIL',
     cgbd: 1,
