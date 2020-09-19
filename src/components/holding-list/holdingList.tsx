@@ -1,8 +1,10 @@
 import React from 'react';
 import './holdingList.css';
-import { Table, Tag, Form, Input, Row, Col} from 'antd';
+import { Table, Tag, Form, Input, Row, Col, Space, Button} from 'antd';
 import { isNumber } from 'util';
 import { IHoldingChangesItem } from '../holdings/holdings';
+import { SearchOutlined } from '@ant-design/icons';
+
 const { ColumnGroup, Column } = Table;
 const { Search } = Input;
 
@@ -18,15 +20,21 @@ interface IHoldingListProps {
 interface IHoldingListState {
   totalSize: number;
   pageSize: number;
+  searchText: string,
+  searchedColumn: string,
 }
 
 export class HoldingList extends React.Component<IHoldingListProps, IHoldingListState> {
+
+  private searchInput: Input | null = null;
   
   constructor(props: IHoldingListProps) {
     super(props);
     this.state = {
       totalSize: defaultTotalSize,
       pageSize: defaultPageSize,
+      searchText: '',
+      searchedColumn: '',
     };
   }
 
@@ -68,6 +76,73 @@ export class HoldingList extends React.Component<IHoldingListProps, IHoldingList
       // 跳转到对应页面
     }
   }
+
+  getColumnSearchProps = (dataIndex: any) => ({
+    filterDropdown: ({ setSelectedKeys, selectedKeys, confirm, clearFilters }: any) => (
+      <div style={{ padding: 8 }}>
+        <Input
+          ref={node => {
+            this.searchInput = node;
+          }}
+          placeholder={`Search ${dataIndex}`}
+          value={selectedKeys[0]}
+          onChange={e => setSelectedKeys(e.target.value ? [e.target.value] : [])}
+          onPressEnter={() => this.handleSearch(selectedKeys, confirm, dataIndex)}
+          style={{ width: 188, marginBottom: 8, display: 'block' }}
+        />
+        <Space>
+          <Button
+            type="primary"
+            onClick={() => this.handleSearch(selectedKeys, confirm, dataIndex)}
+            icon={<SearchOutlined />}
+            size="small"
+            style={{ width: 90 }}
+          >
+            Search
+          </Button>
+          <Button onClick={() => this.handleReset(clearFilters)} size="small" style={{ width: 90 }}>
+            Reset
+          </Button>
+        </Space>
+      </div>
+    ),
+    filterIcon: (filtered: any) => <SearchOutlined style={{ color: filtered ? '#1890ff' : undefined }} />,
+    onFilter: (value: any, record: any) =>
+      record[dataIndex]
+        ? record[dataIndex].toString().toLowerCase().includes(value.toLowerCase())
+        : '',
+    onFilterDropdownVisibleChange: (visible: any) => {
+      if (visible) {
+        setTimeout(() => this.searchInput?.select(), 100);
+      }
+    },
+    render: (text: any) =>
+      // this.state.searchedColumn === dataIndex ? (
+      //   <Highlighter
+      //     highlightStyle={{ backgroundColor: '#ffc069', padding: 0 }}
+      //     searchWords={[this.state.searchText]}
+      //     autoEscape
+      //     textToHighlight={text ? text.toString() : ''}
+      //   />
+      // ) : (
+      //   text
+      // ),
+      <a href={`https://data.eastmoney.com/stockdata/${text}.html`} target="_blank" rel="noopener noreferrer" onClickCapture={e => this.stopPropergation(e)}>{text}</a>
+  });
+
+  handleSearch = (selectedKeys: any, confirm: any, dataIndex: any) => {
+    confirm();
+    this.setState({
+      searchText: selectedKeys[0],
+      searchedColumn: dataIndex,
+    });
+  };
+
+  handleReset = (clearFilters: any) => {
+    clearFilters();
+    this.setState({ searchText: '' });
+  };
+
 
   render() {
     const { dataSource, onClickStock, getHoldingsData } = this.props;
@@ -129,9 +204,7 @@ export class HoldingList extends React.Component<IHoldingListProps, IHoldingList
             }
           }}
         >
-          <Column title="股票代码" dataIndex="SCODE" key="SCODE" fixed render={code => {
-            return <a href={`https://data.eastmoney.com/stockdata/${code}.html`} target="_blank" rel="noopener noreferrer" onClickCapture={e => this.stopPropergation(e)}>{code}</a>;
-          }}/>
+          <Column title="股票代码" dataIndex="SCODE" key="SCODE" fixed {...this.getColumnSearchProps('SCODE')}/>
           <Column title="股票简称" dataIndex="SNAME" key="SNAME" />
           <Column title="数量(万股)" dataIndex="SHAREHDNUM" key="SHAREHDNUM" render={sum => {
             return <span>{(sum / 10000).toFixed(2)}</span>;
