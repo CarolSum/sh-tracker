@@ -14,7 +14,7 @@ app.use((req, res, next) => {
   next();
 });
 
-app.get('/getHoldingsData', (req, res) => {
+app.get('/api/getHoldingsData', (req, res) => {
   axios.get("https://data.eastmoney.com/DataCenter_V3/gdfx/data.ashx", {
     params: req.query,
     responseType: 'arraybuffer',
@@ -47,7 +47,7 @@ app.get('/getHoldingsData', (req, res) => {
   })
 });
 
-app.get('/getStockData', (req, res) => {
+app.get('/api/getStockData', (req, res) => {
   console.log('param: ', req.query);
   axios.get("http://web.ifzq.gtimg.cn/appstock/app/fqkline/get", {
     params: {

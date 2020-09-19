@@ -5,6 +5,7 @@ import axios from 'axios';
 import { getHoldingsDataParam } from "../../utils/helper";
 import Modal from "antd/lib/modal/Modal";
 import { ProfitAnalyzer } from "../profit-analyze/profit-analyzer";
+import { GET_HOLDINGS_DATA } from "../../utils/constant";
 
 export interface IHoldingChangesItem {
   COMPANYCODE: string;
@@ -520,7 +521,7 @@ export class Holdings extends React.Component<IHoldingsProps, IHoldingsState> {
   }
 
   getHoldingsData = (pageSize?: number) => {
-    axios.get('http://localhost:3002/getHoldingsData', {
+    axios.get(GET_HOLDINGS_DATA, {
       params: getHoldingsDataParam(pageSize),
     }).then(res => {
       const result = JSON.parse(res.data.holdings) || {};
