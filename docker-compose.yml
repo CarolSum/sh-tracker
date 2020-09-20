@@ -1,5 +1,5 @@
- version: '1'
-  services:
+version: '3.8'
+services:
   hm-fe:  #前端项目的service name
     container_name: 'hm-fe-container'  #容器名称
     image: nginx  #指定镜像
