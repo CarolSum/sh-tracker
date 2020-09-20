@@ -1,0 +1,397 @@
+
+{
+  "header": {
+    "reportVersion": 1,
+    "event": "Allocation failed - JavaScript heap out of memory",
+    "trigger": "FatalError",
+    "filename": "report.20200920.143744.32015.0.001.json",
+    "dumpEventTime": "2020-09-20T14:37:44Z",
+    "dumpEventTimeStamp": "1600583864747",
+    "processId": 32015,
+    "cwd": "/root/sh-tracker",
+    "commandLine": [
+      "/usr/bin/node",
+      "/root/sh-tracker/node_modules/react-scripts/scripts/build.js"
+    ],
+    "nodejsVersion": "v13.8.0",
+    "glibcVersionRuntime": "2.17",
+    "glibcVersionCompiler": "2.17",
+    "wordSize": 64,
+    "arch": "x64",
+    "platform": "linux",
+    "componentVersions": {
+      "node": "13.8.0",
+      "v8": "7.9.317.25-node.28",
+      "uv": "1.34.1",
+      "zlib": "1.2.11",
+      "brotli": "1.0.7",
+      "ares": "1.15.0",
+      "modules": "79",
+      "nghttp2": "1.40.0",
+      "napi": "5",
+      "llhttp": "2.0.4",
+      "openssl": "1.1.1d",
+      "cldr": "36.0",
+      "icu": "65.1",
+      "tz": "2019c",
+      "unicode": "12.1"
+    },
+    "release": {
+      "name": "node",
+      "headersUrl": "https://nodejs.org/download/release/v13.8.0/node-v13.8.0-headers.tar.gz",
+      "sourceUrl": "https://nodejs.org/download/release/v13.8.0/node-v13.8.0.tar.gz"
+    },
+    "osName": "Linux",
+    "osRelease": "3.10.0-1062.9.1.el7.x86_64",
+    "osVersion": "#1 SMP Fri Dec 6 15:49:49 UTC 2019",
+    "osMachine": "x86_64",
+    "cpus": [
+      {
+        "model": "Intel(R) Xeon(R) CPU E5-26xx v4",
+        "speed": 2394,
+        "user": 1166639300,
+        "nice": 556100,
+        "sys": 1039437600,
+        "idle": 189406091200,
+        "irq": 0
+      }
+    ],
+    "networkInterfaces": [
+      {
+        "name": "lo",
+        "internal": true,
+        "mac": "00:00:00:00:00:00",
+        "address": "127.0.0.1",
+        "netmask": "255.0.0.0",
+        "family": "IPv4"
+      },
+      {
+        "name": "eth0",
+        "internal": false,
+        "mac": "52:54:00:ca:8f:e2",
+        "address": "172.16.0.11",
+        "netmask": "255.255.240.0",
+        "family": "IPv4"
+      },
+      {
+        "name": "lo",
+        "internal": true,
+        "mac": "00:00:00:00:00:00",
+        "address": "::1",
+        "netmask": "ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff",
+        "family": "IPv6",
+        "scopeid": 0
+      },
+      {
+        "name": "eth0",
+        "internal": false,
+        "mac": "52:54:00:ca:8f:e2",
+        "address": "fe80::5054:ff:feca:8fe2",
+        "netmask": "ffff:ffff:ffff:ffff::",
+        "family": "IPv6",
+        "scopeid": 2
+      }
+    ],
+    "host": "VM_0_11_centos"
+  },
+  "javascriptStack": {
+    "message": "No stack.",
+    "stack": [
+      "Unavailable."
+    ]
+  },
+  "nativeStack": [
+    {
+      "pc": "0x0000000000bd0505",
+      "symbol": "report::TriggerNodeReport(v8::Isolate*, node::Environment*, char const*, char const*, std::string const&, v8::Local<v8::String>) [/usr/bin/node]"
+    },
+    {
+      "pc": "0x0000000000a9f86c",
+      "symbol": "node::OnFatalError(char const*, char const*) [/usr/bin/node]"
+    },
+    {
+      "pc": "0x0000000000c0772e",
+      "symbol": "v8::Utils::ReportOOMFailure(v8::internal::Isolate*, char const*, bool) [/usr/bin/node]"
+    },
+    {
+      "pc": "0x0000000000c07aa9",
+      "symbol": "v8::internal::V8::FatalProcessOutOfMemory(v8::internal::Isolate*, char const*, bool) [/usr/bin/node]"
+    },
+    {
+      "pc": "0x0000000000db5fb5",
+      "symbol": " [/usr/bin/node]"
+    },
+    {
+      "pc": "0x0000000000db6646",
+      "symbol": "v8::internal::Heap::RecomputeLimits(v8::internal::GarbageCollector) [/usr/bin/node]"
+    },
+    {
+      "pc": "0x0000000000dc4eb9",
+      "symbol": "v8::internal::Heap::PerformGarbageCollection(v8::internal::GarbageCollector, v8::GCCallbackFlags) [/usr/bin/node]"
+    },
+    {
+      "pc": "0x0000000000dc5cf5",
+      "symbol": "v8::internal::Heap::CollectGarbage(v8::internal::AllocationSpace, v8::internal::GarbageCollectionReason, v8::GCCallbackFlags) [/usr/bin/node]"
+    },
+    {
+      "pc": "0x0000000000dc7479",
+      "symbol": "v8::internal::Heap::CollectAllAvailableGarbage(v8::internal::GarbageCollectionReason) [/usr/bin/node]"
+    },
+    {
+      "pc": "0x0000000000dc8826",
+      "symbol": "v8::internal::Heap::AllocateRawWithRetryOrFailSlowPath(int, v8::internal::AllocationType, v8::internal::AllocationOrigin, v8::internal::AllocationAlignment) [/usr/bin/node]"
+    },
+    {
+      "pc": "0x0000000000d8df7d",
+      "symbol": " [/usr/bin/node]"
+    },
+    {
+      "pc": "0x0000000000d8e32f",
+      "symbol": " [/usr/bin/node]"
+    },
+    {
+      "pc": "0x0000000000d8fff2",
+      "symbol": "v8::internal::Factory::NewUninitializedFixedArray(int) [/usr/bin/node]"
+    },
+    {
+      "pc": "0x0000000000f01c4f",
+      "symbol": " [/usr/bin/node]"
+    },
+    {
+      "pc": "0x0000000000f01f00",
+      "symbol": " [/usr/bin/node]"
+    },
+    {
+      "pc": "0x00000000010b2d6b",
+      "symbol": "v8::internal::Runtime_GrowArrayElements(int, unsigned long*, v8::internal::Isolate*) [/usr/bin/node]"
+    },
+    {
+      "pc": "0x000000000145ce19",
+      "symbol": " [/usr/bin/node]"
+    }
+  ],
+  "javascriptHeap": {
+    "totalMemory": 969428992,
+    "totalCommittedMemory": 966797360,
+    "usedMemory": 956737232,
+    "availableMemory": 21735168,
+    "memoryLimit": 989069312,
+    "heapSpaces": {
+      "read_only_space": {
+        "memorySize": 262144,
+        "committedMemory": 33328,
+        "capacity": 33040,
+        "used": 33040,
+        "available": 0
+      },
+      "new_space": {
+        "memorySize": 2097152,
+        "committedMemory": 2304,
+        "capacity": 1047424,
+        "used": 0,
+        "available": 1047424
+      },
+      "old_space": {
+        "memorySize": 854990848,
+        "committedMemory": 854818224,
+        "capacity": 845801432,
+        "used": 845801432,
+        "available": 0
+      },
+      "code_space": {
+        "memorySize": 2002944,
+        "committedMemory": 1867936,
+        "capacity": 1681568,
+        "used": 1681568,
+        "available": 0
+      },
+      "map_space": {
+        "memorySize": 4722688,
+        "committedMemory": 4722352,
+        "capacity": 4116240,
+        "used": 4116240,
+        "available": 0
+      },
+      "large_object_space": {
+        "memorySize": 104730624,
+        "committedMemory": 104730624,
+        "capacity": 104560408,
+        "used": 104560408,
+        "available": 0
+      },
+      "code_large_object_space": {
+        "memorySize": 622592,
+        "committedMemory": 622592,
+        "capacity": 544544,
+        "used": 544544,
+        "available": 0
+      },
+      "new_large_object_space": {
+        "memorySize": 0,
+        "committedMemory": 0,
+        "capacity": 1047424,
+        "used": 0,
+        "available": 1047424
+      }
+    }
+  },
+  "resourceUsage": {
+    "userCpuSeconds": 86.4112,
+    "kernelCpuSeconds": 2.84847,
+    "cpuConsumptionPercent": 85.0092,
+    "maxRss": 1062866944,
+    "pageFaults": {
+      "IORequired": 39,
+      "IONotRequired": 628079
+    },
+    "fsActivity": {
+      "reads": 433528,
+      "writes": 64
+    }
+  },
+  "uvthreadResourceUsage": {
+    "userCpuSeconds": 51.5381,
+    "kernelCpuSeconds": 2.16122,
+    "cpuConsumptionPercent": 51.1422,
+    "fsActivity": {
+      "reads": 297528,
+      "writes": 64
+    }
+  },
+  "libuv": [
+  ],
+  "environmentVariables": {
+    "XDG_SESSION_ID": "326277",
+    "npm_package_dependencies_iconv_lite": "^0.6.2",
+    "HOSTNAME": "VM_0_11_centos",
+    "NODE": "/usr/bin/node",
+    "npm_config_version_git_tag": "true",
+    "npm_package_dependencies_axios": "^0.19.2",
+    "npm_package_dependencies_moment": "^2.27.0",
+    "INIT_CWD": "/root/sh-tracker",
+    "TERM": "xterm-256color",
+    "SHELL": "/bin/bash",
+    "HISTSIZE": "3000",
+    "SSH_CLIENT": "61.144.209.226 60026 22",
+    "npm_config_init_license": "MIT",
+    "npm_config_registry": "https://registry.yarnpkg.com",
+    "npm_package_private": "true",
+    "SSH_TTY": "/dev/pts/0",
+    "npm_package_dependencies_react_dom": "^16.13.1",
+    "npm_package_readmeFilename": "README.md",
+    "npm_package_description": "In the project directory, you can run:",
+    "USER": "root",
+    "LS_COLORS": "rs=0:di=38;5;27:ln=38;5;51:mh=44;38;5;15:pi=40;38;5;11:so=38;5;13:do=38;5;5:bd=48;5;232;38;5;11:cd=48;5;232;38;5;3:or=48;5;232;38;5;9:mi=05;48;5;232;38;5;15:su=48;5;196;38;5;15:sg=48;5;11;38;5;16:ca=48;5;196;38;5;226:tw=48;5;10;38;5;16:ow=48;5;10;38;5;21:st=48;5;21;38;5;15:ex=38;5;34:*.tar=38;5;9:*.tgz=38;5;9:*.arc=38;5;9:*.arj=38;5;9:*.taz=38;5;9:*.lha=38;5;9:*.lz4=38;5;9:*.lzh=38;5;9:*.lzma=38;5;9:*.tlz=38;5;9:*.txz=38;5;9:*.tzo=38;5;9:*.t7z=38;5;9:*.zip=38;5;9:*.z=38;5;9:*.Z=38;5;9:*.dz=38;5;9:*.gz=38;5;9:*.lrz=38;5;9:*.lz=38;5;9:*.lzo=38;5;9:*.xz=38;5;9:*.bz2=38;5;9:*.bz=38;5;9:*.tbz=38;5;9:*.tbz2=38;5;9:*.tz=38;5;9:*.deb=38;5;9:*.rpm=38;5;9:*.jar=38;5;9:*.war=38;5;9:*.ear=38;5;9:*.sar=38;5;9:*.rar=38;5;9:*.alz=38;5;9:*.ace=38;5;9:*.zoo=38;5;9:*.cpio=38;5;9:*.7z=38;5;9:*.rz=38;5;9:*.cab=38;5;9:*.jpg=38;5;13:*.jpeg=38;5;13:*.gif=38;5;13:*.bmp=38;5;13:*.pbm=38;5;13:*.pgm=38;5;13:*.ppm=38;5;13:*.tga=38;5;13:*.xbm=38;5;13:*.xpm=38;5;13:*.tif=38;5;13:*.tiff=38;5;13:*.png=38;5;13:*.svg=38;5;13:*.svgz=38;5;13:*.mng=38;5;13:*.pcx=38;5;13:*.mov=38;5;13:*.mpg=38;5;13:*.mpeg=38;5;13:*.m2v=38;5;13:*.mkv=38;5;13:*.webm=38;5;13:*.ogm=38;5;13:*.mp4=38;5;13:*.m4v=38;5;13:*.mp4v=38;5;13:*.vob=38;5;13:*.qt=38;5;13:*.nuv=38;5;13:*.wmv=38;5;13:*.asf=38;5;13:*.rm=38;5;13:*.rmvb=38;5;13:*.flc=38;5;13:*.avi=38;5;13:*.fli=38;5;13:*.flv=38;5;13:*.gl=38;5;13:*.dl=38;5;13:*.xcf=38;5;13:*.xwd=38;5;13:*.yuv=38;5;13:*.cgm=38;5;13:*.emf=38;5;13:*.axv=38;5;13:*.anx=38;5;13:*.ogv=38;5;13:*.ogx=38;5;13:*.aac=38;5;45:*.au=38;5;45:*.flac=38;5;45:*.mid=38;5;45:*.midi=38;5;45:*.mka=38;5;45:*.mp3=38;5;45:*.mpc=38;5;45:*.ogg=38;5;45:*.ra=38;5;45:*.wav=38;5;45:*.axa=38;5;45:*.oga=38;5;45:*.spx=38;5;45:*.xspf=38;5;45:",
+    "npm_package_dependencies__testing_library_user_event": "^7.1.2",
+    "npm_package_dependencies__ant_design_charts": "^0.9.11",
+    "npm_package_browserslist_development_1": "last 1 firefox version",
+    "npm_package_browserslist_development_0": "last 1 chrome version",
+    "npm_package_eslintConfig_extends": "react-app",
+    "npm_package_browserslist_development_2": "last 1 safari version",
+    "npm_package_dependencies_iconv": "^3.0.0",
+    "npm_execpath": "/usr/share/yarn/bin/yarn.js",
+    "npm_config_argv": "{\"remain\":[],\"cooked\":[\"run\",\"build\"],\"original\":[\"--max-old-space-size=8096\",\"build\"]}",
+    "MAIL": "/var/spool/mail/root",
+    "PATH": "/tmp/yarn--1600583759155-0.1941319850546399:/root/sh-tracker/node_modules/.bin:/usr/local/share/.config/yarn/link/node_modules/.bin:/usr/libexec/lib/node_modules/npm/bin/node-gyp-bin:/usr/lib/node_modules/npm/bin/node-gyp-bin:/usr/bin/node_modules/npm/bin/node-gyp-bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/root/bin",
+    "_": "/root/sh-tracker/node_modules/.bin/react-scripts",
+    "npm_package_dependencies__types_jest": "^24.0.0",
+    "npm_package_dependencies_typescript": "~3.7.2",
+    "npm_package_browserslist_production_1": "not dead",
+    "npm_package_browserslist_production_0": ">0.2%",
+    "PWD": "/root/sh-tracker",
+    "npm_package_browserslist_production_2": "not op_mini all",
+    "npm_lifecycle_event": "build",
+    "npm_package_name": "holdings-monitor",
+    "LANG": "zh_CN.UTF-8",
+    "npm_config_version_commit_hooks": "true",
+    "npm_package_scripts_start": "react-scripts start",
+    "npm_package_scripts_build": "react-scripts build",
+    "npm_config_bin_links": "true",
+    "npm_package_version": "0.1.0",
+    "SHLVL": "2",
+    "HOME": "/root",
+    "npm_package_scripts_test": "react-scripts test",
+    "npm_config_strict_ssl": "true",
+    "npm_config_save_prefix": "^",
+    "npm_config_version_git_message": "v%s",
+    "npm_package_dependencies__testing_library_jest_dom": "^4.2.4",
+    "npm_package_dependencies__types_node": "^12.0.0",
+    "npm_package_dependencies_react_scripts": "3.4.3",
+    "YARN_WRAP_OUTPUT": "false",
+    "LOGNAME": "root",
+    "npm_lifecycle_script": "react-scripts build",
+    "SSH_CONNECTION": "61.144.209.226 60026 172.16.0.11 22",
+    "npm_package_dependencies_react": "^16.13.1",
+    "npm_package_dependencies__types_react": "^16.9.0",
+    "LESSOPEN": "||/usr/bin/lesspipe.sh %s",
+    "npm_config_user_agent": "yarn/1.21.1 npm/? node/v13.8.0 linux x64",
+    "npm_config_ignore_scripts": "",
+    "npm_config_version_git_sign": "",
+    "npm_package_dependencies__testing_library_react": "^9.3.2",
+    "PROMPT_COMMAND": "history -a; printf \"\\033]0;%s@%s:%s\\007\" \"${USER}\" \"${HOSTNAME%%.*}\" \"${PWD/#$HOME/~}\"",
+    "XDG_RUNTIME_DIR": "/run/user/0",
+    "npm_package_dependencies_express": "^4.17.1",
+    "npm_config_ignore_optional": "",
+    "npm_config_init_version": "1.0.0",
+    "npm_package_dependencies_antd": "^4.5.4",
+    "npm_package_scripts_eject": "react-scripts eject",
+    "npm_package_dependencies__types_react_dom": "^16.9.0",
+    "HISTTIMEFORMAT": "%F %T ",
+    "npm_config_version_tag_prefix": "v",
+    "npm_node_execpath": "/usr/bin/node",
+    "BABEL_ENV": "production",
+    "NODE_ENV": "production",
+    "NODE_PATH": ""
+  },
+  "userLimits": {
+    "core_file_size_blocks": {
+      "soft": 0,
+      "hard": "unlimited"
+    },
+    "data_seg_size_kbytes": {
+      "soft": "unlimited",
+      "hard": "unlimited"
+    },
+    "file_size_blocks": {
+      "soft": "unlimited",
+      "hard": "unlimited"
+    },
+    "max_locked_memory_bytes": {
+      "soft": 65536,
+      "hard": 65536
+    },
+    "max_memory_size_kbytes": {
+      "soft": "unlimited",
+      "hard": "unlimited"
+    },
+    "open_files": {
+      "soft": 100002,
+      "hard": 100002
+    },
+    "stack_size_bytes": {
+      "soft": 8388608,
+      "hard": "unlimited"
+    },
+    "cpu_time_seconds": {
+      "soft": "unlimited",
+      "hard": "unlimited"
+    },
+    "max_user_processes": {
+      "soft": 7266,
+      "hard": 7266
+    },
+    "virtual_memory_kbytes": {
+      "soft": "unlimited",
+      "hard": "unlimited"
+    }
+  },
+  "sharedObjects": [
+    "/lib64/libdl.so.2",
+    "/lib64/libstdc++.so.6",
+    "/lib64/libm.so.6",
+    "/lib64/libgcc_s.so.1",
+    "/lib64/libpthread.so.0",
+    "/lib64/libc.so.6",
+    "/lib64/ld-linux-x86-64.so.2"
+  ]
+}
